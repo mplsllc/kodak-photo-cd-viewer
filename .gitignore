@@ -1,0 +1,14 @@
+/build/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/Testing/
+*.user
+*.swp
+*.iso
+*.cue
+*.bin
+*.pcd
+*.PCD
+*.m3u
+/research/private/

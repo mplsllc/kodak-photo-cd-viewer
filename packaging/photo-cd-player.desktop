@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Photo CD Player
+Comment=Browse Kodak Photo CD albums
+Exec=photo-cd-player --open %f
+Icon=media-optical
+Terminal=false
+Categories=Graphics;Viewer;
+MimeType=x-content/x-kodak-photo-cd;
+StartupNotify=true

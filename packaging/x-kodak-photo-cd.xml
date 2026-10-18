@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="x-content/x-kodak-photo-cd">
+    <comment>Kodak Photo CD</comment>
+    <treemagic>
+      <treematch path="PHOTO_CD/IMAGES" type="directory" non-empty="true" match-case="false" priority="80"/>
+    </treemagic>
+  </mime-type>
+</mime-info>
