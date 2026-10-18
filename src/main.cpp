@@ -6,8 +6,15 @@
 
 #include <QApplication>
 #include <QTextStream>
+#include <QUrl>
 
 namespace {
+QString localPathFromLaunchArgument(const QString &argument)
+{
+    const QUrl url(argument);
+    return url.isLocalFile() ? url.toLocalFile() : argument;
+}
+
 int selfCheck(const QString &path)
 {
     QTextStream out(stdout);
@@ -102,7 +109,7 @@ int main(int argc, char **argv)
                 QTextStream(stderr) << "--open requires a mounted disc directory.\n";
                 return 64;
             }
-            initialPath = QString::fromLocal8Bit(argv[++i]);
+            initialPath = localPathFromLaunchArgument(QString::fromLocal8Bit(argv[++i]));
         } else if (arg == QStringLiteral("--self-check")) {
             runCheck = true;
             if (i + 1 < argc && !QString::fromLocal8Bit(argv[i + 1]).startsWith(QLatin1Char('-')))
@@ -119,7 +126,7 @@ int main(int argc, char **argv)
             QTextStream(stderr) << "Unknown option: " << arg << Qt::endl;
             return 64;
         } else {
-            initialPath = arg;
+            initialPath = localPathFromLaunchArgument(arg);
         }
     }
     if (help) {

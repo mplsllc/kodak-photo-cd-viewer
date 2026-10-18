@@ -1,8 +1,10 @@
 [Desktop Entry]
 Type=Application
-Name=Photo CD Player
+Name=Kodak Photo CD Viewer
+GenericName=Photo CD Browser
 Comment=Browse Kodak Photo CD albums
-Exec=photo-cd-player --open %f
+TryExec=photo-cd-player
+Exec=photo-cd-player --open %u
 Icon=media-optical
 Terminal=false
 Categories=Graphics;Viewer;

@@ -54,14 +54,16 @@ cmake --install build --prefix "$HOME/.local"
 "$HOME/.local/share/photo-cd-player/install-user-integration.sh"
 ```
 
-The integration script is opt-in and only changes user-level MIME and application settings. The interface is guide-informed and intentionally a first reconstruction, not a claim of exact pixel fidelity. The Philips v3.x guide documents the menu choices and controls; recovered CD-i assets remain local and are not bundled. The locally examined Philips application reports version 3.1 (April 14, 1993); the separate public archive used for v3.3 static analysis is not that disc. The repository contains the native viewer source and licensed decoder; it does not redistribute the original Philips program or proprietary CD-i graphics.
+The integration script registers the viewer for the Photo CD volume type and makes it the user-level opener. After installation, the viewer is available from the desktop's removable-disc **Open With** choices. Whether insertion opens it immediately or asks first is controlled by the desktop's removable-media policy. The handler accepts either a local mount path or a `file:` URI.
+
+The interface is guide-informed and intentionally a first reconstruction, not a claim of exact pixel fidelity. The Philips v3.x guide documents the menu choices and controls; recovered CD-i assets remain local and are not bundled. The locally examined Philips application reports version 3.1 (April 14, 1993); the separate public archive used for v3.3 static analysis is not that disc. The repository contains the native viewer source and licensed decoder; it does not redistribute the original Philips program or proprietary CD-i graphics.
 
 ## Known gaps
 
 - `OVERVIEW.PCD` is a Kodak overview pack, not a normal photo. The generic decoder reports interleaved audio when asked to decode it; this app builds the index from individual image files instead.
 - No parser for all `OPTIONS.PCD`/`INFO.PCD` metadata, CD-i asset formats, saved playlist format, or multisession disc-image container is included yet.
 - Custom ordered playlists, hidden-photo management, and original-language menus are not implemented yet.
-- Automatic desktop insertion launch is not enabled by the build. After installing to your user prefix, run `~/.local/share/photo-cd-player/install-user-integration.sh` to register the Photo CD tree type and make this app the user-level opener. The desktop environment may still require explicit approval to launch on insertion.
+- Automatic desktop insertion launch is governed by the desktop's removable-media policy. The user-level integration registers the Photo CD tree type and makes this app the default opener for it; desktops that disable automatic launching may still offer it under **Open With**.
 - No original Philips program or graphic assets are redistributed.
 
 Reverse-engineering evidence and confidence levels are in [`research/ledger.md`](research/ledger.md). Local extracted reference binaries are kept outside version control under `research/private/`.
