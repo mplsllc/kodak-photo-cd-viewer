@@ -34,5 +34,8 @@ endif()
 install(TARGETS photo-cd-player RUNTIME DESTINATION bin)
 install(FILES packaging/photo-cd-player.desktop DESTINATION share/applications)
 install(FILES packaging/photo-cd-player.desktop packaging/x-kodak-photo-cd.xml
+        packaging/kodak-photo-cd-solid-action.desktop
         DESTINATION share/photo-cd-player)
 install(PROGRAMS packaging/install-user-integration.sh DESTINATION share/photo-cd-player)
+install(FILES packaging/kodak-photo-cd-solid-action.desktop
+        DESTINATION share/solid/actions)

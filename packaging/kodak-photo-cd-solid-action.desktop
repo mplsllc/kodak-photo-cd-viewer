@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-KDE-Solid-Predicate=[ StorageVolume.ignored == false AND OpticalDisc.availableContent & 'Data' ]
+Type=Service
+Actions=open;
+
+[Desktop Action open]
+Name=Open with Kodak Photo CD Viewer
+Exec=photo-cd-player --open "%f"
+Icon=media-optical

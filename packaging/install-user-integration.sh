@@ -5,9 +5,10 @@ script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 data_dir=${XDG_DATA_HOME:-"$HOME/.local/share"}
 config_dir=${XDG_CONFIG_HOME:-"$HOME/.config"}
 
-mkdir -p "$data_dir/applications" "$data_dir/mime/packages" "$config_dir"
+mkdir -p "$data_dir/applications" "$data_dir/mime/packages" "$data_dir/solid/actions" "$config_dir"
 cp "$script_dir/photo-cd-player.desktop" "$data_dir/applications/photo-cd-player.desktop"
 cp "$script_dir/x-kodak-photo-cd.xml" "$data_dir/mime/packages/x-kodak-photo-cd.xml"
+cp "$script_dir/kodak-photo-cd-solid-action.desktop" "$data_dir/solid/actions/kodak-photo-cd-viewer.desktop"
 update-mime-database "$data_dir/mime"
 if command -v update-desktop-database >/dev/null 2>&1; then
     update-desktop-database "$data_dir/applications"
@@ -36,4 +37,5 @@ path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 PY
 
 printf '%s\n' "Installed user-level Photo CD opening integration in $data_dir."
+printf '%s\n' "KDE Plasma also has an Open with Kodak Photo CD Viewer action in Disks & Devices."
 printf '%s\n' "Opening on insertion remains subject to the desktop environment's removable-media policy."

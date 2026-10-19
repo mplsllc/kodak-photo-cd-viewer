@@ -54,7 +54,7 @@ cmake --install build --prefix "$HOME/.local"
 "$HOME/.local/share/photo-cd-player/install-user-integration.sh"
 ```
 
-The integration script registers the viewer for the Photo CD volume type and makes it the user-level opener. After installation, the viewer is available from the desktop's removable-disc **Open With** choices. Whether insertion opens it immediately or asks first is controlled by the desktop's removable-media policy. The handler accepts either a local mount path or a `file:` URI.
+The integration script registers the viewer for the Photo CD volume type and makes it the user-level opener. After installation, it is available from the desktop's removable-disc **Open With** choices. On KDE Plasma, it also adds **Open with Kodak Photo CD Viewer** to the **Disks & Devices** actions for mounted optical data discs. Whether insertion opens it immediately or asks first is controlled by the desktop's removable-media policy. The handler accepts either a local mount path or a `file:` URI.
 
 The interface is guide-informed and intentionally a first reconstruction, not a claim of exact pixel fidelity. The Philips v3.x guide documents the menu choices and controls; recovered CD-i assets remain local and are not bundled. The locally examined Philips application reports version 3.1 (April 14, 1993); the separate public archive used for v3.3 static analysis is not that disc. The repository contains the native viewer source and licensed decoder; it does not redistribute the original Philips program or proprietary CD-i graphics.
 
