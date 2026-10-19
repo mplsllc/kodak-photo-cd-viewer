@@ -1,5 +1,5 @@
 [Desktop Entry]
-X-KDE-Solid-Predicate=[ StorageVolume.ignored == false AND OpticalDisc.availableContent & 'Data' ]
+X-KDE-Solid-Predicate=OpticalDisc.availableContent & 'Data'
 Type=Service
 Actions=open;
 
